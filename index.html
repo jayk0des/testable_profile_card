@@ -1,0 +1,115 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessible Profile Card</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-testid="test-page-body">
+  <article class="profile-card" data-testid="test-profile-card" aria-label="Profile card">
+    <div class="profile-main" data-testid="test-profile-main">
+      <figure class="profile-figure" data-testid="test-avatar-figure">
+        <img
+          class="avatar"
+          data-testid="test-user-avatar"
+          id="profileAvatar"
+          src="/profile-photo.jpg"
+          alt="Portrait of Johnson Francis smiling at the camera"
+        />
+        <figcaption data-testid="test-avatar-caption">Profile photo</figcaption>
+      </figure>
+
+      <div data-testid="test-profile-content">
+        <header class="profile-header" data-testid="test-profile-header">
+          <h1 data-testid="test-user-name">Alex Johnson</h1>
+          <p data-testid="test-user-bio">
+            Frontend developer who enjoys building inclusive web interfaces, mentoring new developers, and exploring interaction design.
+          </p>
+          <p class="time-row" data-testid="test-time-row">
+            Current epoch time (ms):
+            <span id="epochTime" data-testid="test-user-time" aria-live="polite" aria-atomic="true"></span>
+          </p>
+        </header>
+
+        <section class="controls" data-testid="test-avatar-controls" aria-label="Avatar controls">
+          <div class="control-group" data-testid="test-avatar-url-group">
+            <label for="avatarUrlInput" data-testid="test-avatar-url-label">Avatar image URL</label>
+            <input
+              data-testid="test-avatar-url-input"
+              id="avatarUrlInput"
+              type="url"
+              placeholder="https://example.com/photo.jpg"
+              aria-describedby="avatarUrlHelp"
+            />
+            <small id="avatarUrlHelp" data-testid="test-avatar-url-help">Paste a valid image URL and apply it.</small>
+          </div>
+          <button id="applyAvatarUrl" type="button" data-testid="test-avatar-url-button">Apply URL</button>
+
+          <div class="control-group" data-testid="test-avatar-file-group">
+            <label for="avatarFileInput" data-testid="test-avatar-file-label">Or upload an image file</label>
+            <input data-testid="test-avatar-file-input" id="avatarFileInput" type="file" accept="image/*" />
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="sections" data-testid="test-profile-sections">
+      <section class="section-card" data-testid="test-social-section" aria-label="Social links section">
+        <h2 data-testid="test-social-heading">Social Links</h2>
+        <nav data-testid="test-user-social-links" aria-label="Social media links">
+          <ul class="social-links" data-testid="test-social-list">
+            <li data-testid="test-social-item-x">
+              <a
+                data-testid="test-user-social-twitter"
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open X profile in a new tab"
+              >X</a>
+            </li>
+            <li data-testid="test-social-item-github">
+              <a
+                data-testid="test-user-social-github"
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open GitHub profile in a new tab"
+              >GitHub</a>
+            </li>
+            <li data-testid="test-social-item-linkedin">
+              <a
+                data-testid="test-user-social-linkedin"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open LinkedIn profile in a new tab"
+              >LinkedIn</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="section-card" data-testid="test-hobbies-section" aria-label="Hobbies section">
+        <h2 data-testid="test-hobbies-heading">Hobbies</h2>
+        <ul class="tags" data-testid="test-user-hobbies">
+          <li data-testid="test-hobby-ui">UI prototyping</li>
+          <li data-testid="test-hobby-reading">Reading design books</li>
+          <li data-testid="test-hobby-walking">Evening walks</li>
+        </ul>
+      </section>
+
+      <section class="section-card" data-testid="test-dislikes-section" aria-label="Dislikes section">
+        <h2 data-testid="test-dislikes-heading">Dislikes</h2>
+        <ul class="tags" data-testid="test-user-dislikes">
+          <li data-testid="test-dislike-clutter">Cluttered interfaces</li>
+          <li data-testid="test-dislike-vague">Vague requirements</li>
+          <li data-testid="test-dislike-late">Missing deadlines</li>
+        </ul>
+      </section>
+    </section>
+  </article>
+
+  <script src="./javascript/script.js"></script>
+</body>
+</html>
